@@ -1,0 +1,23 @@
+步骤一：需要安装的程序和库
+安装mysql数据库，设置好mysql的root用户，记住密码，之后会用到
+安装python
+安装python tkinter库
+安装python mysql.connector库
+安装python installer库
+
+步骤二：设置mysql数据库和backend.py
+先确保在mysql的root用户下已经有名为test的database，打开backend.py，注意以下代码：
+    conn=mysql.connector.connect(
+    host="localhost",        
+    user="root",               
+    passwd="12345678",       //这里是自己设定的mysql root用户密码
+    database="test"
+    )
+    上面的passwd需要修改为本机的mysql root用户密码
+
+所有在图形界面添加的数据，最终都保存在mysql的test数据库的book表中
+
+步骤三：使用如下命令，将py文件生成exe文件
+pyinstaller --onefile --windowed frontend.py
+
+关于代码的详细解读：https://shimo.im/docs/m4kMLxnYelI1ejqD/ 「tkinter&bookstore」，可复制链接后用石墨文档 App 或小程序打开
